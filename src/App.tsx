@@ -1,4 +1,4 @@
-import { Button, ButtonSize, ButtonType } from './components/Button';
+import { Button, SubMenu, Menu, MenuItem } from './components';
 
 function App() {
   return (
@@ -7,28 +7,49 @@ function App() {
         123
       </Button>
       <Button
-        btnType={ButtonType.Primary}
+        btnType="primary"
         onClick={() => {
           console.log(23333);
         }}
       >
         456
       </Button>
-      <Button btnType={ButtonType.Primary} size={ButtonSize.Small}>
+      <Button btnType="primary" size="sm">
         456
       </Button>
-      <Button btnType={ButtonType.Danger} size={ButtonSize.large}>
+      <Button btnType="danger" size="lg">
         456
       </Button>
-      <Button btnType={ButtonType.Link} size={ButtonSize.large} href="123">
+      <Button btnType="link" size="lg" href="123">
         456
       </Button>
-      <Button btnType={ButtonType.Danger} size={ButtonSize.large} disable={true}>
+      <Button btnType="danger" size="lg" disable={true}>
         456
       </Button>
-      <Button btnType={ButtonType.Link} size={ButtonSize.large} disable href="123">
+      <Button btnType="link" size="sm" disable href="123">
         456
       </Button>
+      <hr />
+      <Menu
+        onSelect={index => {
+          console.log(index);
+        }}
+        defaultOpenSubMenus={['6']}
+        mode="vertical"
+      >
+        <MenuItem>123</MenuItem>
+        <MenuItem>123789</MenuItem>
+        <MenuItem>asdasd</MenuItem>
+        <MenuItem>123</MenuItem>
+
+        <MenuItem>123789</MenuItem>
+        <SubMenu title="Dropdown">
+          <MenuItem>123</MenuItem>
+          <MenuItem>123789</MenuItem>
+          <MenuItem>asdasd</MenuItem>
+          <MenuItem>123</MenuItem>
+        </SubMenu>
+      </Menu>
     </div>
   );
 }

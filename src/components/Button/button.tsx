@@ -1,15 +1,15 @@
 import React from 'react';
 import classNames from 'classnames';
-import { ButtonProps, ButtonType } from './types';
+import { ButtonProps } from './types';
 
 export const Button: React.FC<ButtonProps> = props => {
   const { btnType, disable, size, children, href, className, ...restProps } = props;
   const classes = classNames('btn', className, {
     [`btn-${btnType}`]: btnType,
     [`btn-${size}`]: size,
-    disable: btnType === ButtonType.Link && disable,
+    disable: btnType === 'link' && disable,
   });
-  if (btnType === ButtonType.Link) {
+  if (btnType === 'link') {
     if (href) {
       return (
         <a href={href} className={classes} {...restProps}>
@@ -30,5 +30,5 @@ export const Button: React.FC<ButtonProps> = props => {
 
 Button.defaultProps = {
   disable: false,
-  btnType: ButtonType.Default,
+  btnType: 'default',
 };

@@ -1,15 +1,7 @@
 import React from 'react';
-export enum ButtonSize {
-  large = 'lg',
-  Small = 'sm',
-}
+type ButtonSize = 'lg' | 'sm';
 
-export enum ButtonType {
-  Primary = 'primary',
-  Default = 'default',
-  Danger = 'danger',
-  Link = 'link',
-}
+type ButtonType = 'primary' | 'default' | 'danger' | 'link';
 
 export interface IBaseButtonProps {
   className: string;
